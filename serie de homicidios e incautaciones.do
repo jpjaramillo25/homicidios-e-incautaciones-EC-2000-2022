@@ -76,3 +76,12 @@ sfrancia res
 
 drop res
 
+
+****
+
+
+twoway (lfitci lnincautaciones lnsembrios) (scatter lnincautaciones lnsembrios)
+
+twoway (lfitci lnincautaciones tiempo) (scatter lnincautaciones tiempo)
+
+
