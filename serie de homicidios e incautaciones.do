@@ -1,7 +1,7 @@
 
 *modelo de incautaciones
 
-reg lnincautaciones lnsembrios base_manta correa cam_est, robust
+reg lnincautaciones lnsembrios base_manta correa cam_est y2009, robust
 
 outreg2 using serie.doc, ctitle(lnincautaciones) replace
 
@@ -25,7 +25,7 @@ twoway (scatter res tiempo)
 drop res predichos
 
 
-newey lnincautaciones lnsembrios base_manta correa cam_est, lag(1)
+newey lnincautaciones lnsembrios base_manta correa cam_est y2009, lag(1)
 
 outreg2 using serie.doc, ctitle(lnincautaciones) append
 
@@ -48,7 +48,7 @@ estat sbsingle
 
 ***********
 
-reg d.lnhomi l.lnhomi lnincautaciones lnsembrios base_manta correa cam_est, robust
+reg d.lnhomi l.lnhomi lnincautaciones lnsembrios base_manta correa cam_est y2009, robust
 outreg2 using serie.doc, ctitle(d.lnhomicides) append
 
 estat dwatson
@@ -62,7 +62,7 @@ sfrancia res
 drop res
 
 
-reg d.lnhomi l.lnhomi lnincautaciones lnsembrios base_manta correa cam_est lasso , robust
+reg d.lnhomi l.lnhomi lnincautaciones lnsembrios base_manta correa cam_est lasso y2009, robust
 outreg2 using serie.doc, ctitle(d.lnhomicides) append
 
 
