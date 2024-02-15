@@ -14,6 +14,8 @@ predict res, residuals
 
 dfuller res
 
+dfuller res, noconstant lags(1)
+
 sfrancia res
 
 
